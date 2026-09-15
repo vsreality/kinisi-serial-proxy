@@ -1,0 +1,17 @@
+[Unit]
+Description=Kinisi WebSocket to serial proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Adjust User and paths to your installation.
+# For LAN access, add --host, --allow-client and --allow-origin; see README.md.
+User=pi
+WorkingDirectory=/home/pi/kinisi-serial-proxy
+ExecStart=/home/pi/kinisi-serial-proxy/.venv/bin/python3 /home/pi/kinisi-serial-proxy/proxy.py --host 127.0.0.1 --baud-rate 115200
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

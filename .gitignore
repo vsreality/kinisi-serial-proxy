@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.log
+*.pid
+*.pid.tmp
+proxy.lock
+.env
+.env.*
+!.env.example
+backup*/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
